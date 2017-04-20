@@ -1,5 +1,4 @@
 module JobsHelper
-  module JobsHelper
 
   def render_job_status(job)
     if job.is_hidden
@@ -8,5 +7,5 @@ module JobsHelper
       "(Public)"
     end
   end
-end
+
 end
