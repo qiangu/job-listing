@@ -21,7 +21,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 .jumbotron {
-  background-image:url('http://odau7u92l.bkt.clouddn.com/chicago-690364.jpg');
+  background-image:url('header.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
@@ -279,3 +279,43 @@
  .login-help{
    font-size: 12px;
  }
+
+ //---------Content---------
+
+   .content-section-a {
+       padding: 50px 0;
+       background-color: #f8f8f8;
+   }
+
+   .content-section-b {
+       padding: 50px 0;
+       border-top: 1px solid #e7e7e7;
+       border-bottom: 1px solid #e7e7e7;
+   }
+
+   .section-heading-spacer {
+       float: left;
+       width: 200px;
+       border-top: 3px solid #e7e7e7;
+   }
+
+   .section-heading {
+       margin-bottom: 30px;
+   }
+
+   .lead {
+       font-size: 18px;
+       font-weight: 400;
+       color: #333333;
+   }
+
+   //---------Footer---------
+
+  footer {
+      color: white;
+  }
+
+  footer .footer-below {
+      padding: 25px 0;
+      background-color: #233140;
+  }
