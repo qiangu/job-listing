@@ -1,39 +1,67 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/"><i class="fa fa-diamond" aria-hidden="true">GALAXY GUARDIAN</i></a>
+<nav class="navbar navbar-default welcome-index-navbar " id="qz-header">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <span class="logo"><img src="http://oopukvrsv.bkt.clouddn.com/Marvel-logo60px.png">
 
-        </div>
+         GUARDIANS OF THE GALAXY
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                  <% if !current_user %>
-                  +<li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-                  +<li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
-                <% else %>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!, <%= current_user.email %>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <% if current_user.admin? %>
-                      <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
-                      <% end %>
-                      <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
-                    </ul>
-                  </li>
-                <% end %>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+        </span>
+      </a>
     </div>
-    <!-- /.container-fluid -->
+    <div class="navbar-collapse navbar-ex1-collapse collapse" aria-expanded="false" style="height: 432px;">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+    <li><a href="/jobs">RESUME</a></li>
+
+      <li>
+
+
+</ul>
+
+
+
+
+<ul class="nav navbar-nav navbar-right">
+  <li>
+    <% if !current_user %>
+
+    +<li><a href="#" data-toggle="modal" data-target="#login-modal">LOG IN</a></li>
+    +<li><a href="#" data-toggle="modal" data-target="#signup-modal">SING UP</a></li>
+  <% else %>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          Hi!, <%= current_user.email %>
+          <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <% if current_user.admin? %>
+        <li> <%= link_to("管理员通道", admin_jobs_path) %> </li>
+        <% end %>
+        <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+      </ul>
+    </li>
+  <% end %>
+  </li>
+
+
+</ul>
+
+<!-- 上面是全栈的nav-->
+
+
+    </div>
+  </div>
 </nav>
+
+
+
+<!-- 上面是模板-->
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
