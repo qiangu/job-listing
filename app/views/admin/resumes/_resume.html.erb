@@ -1,27 +1,47 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="panel-title">
-                    <%= resume.user.email %>
-                </h3>
-            </div>
+<div class="job-list">
+<ul>
 
-        </div>
-    </div>
-    <div class="panel-body">
-        <div class="trix-content">
-            <p> <%= simple_format(resume.content) %> </p>
-        </div>
+      <li>
+          <a href="/job_detail/1411172989.html?ka=job_list_1" ka="job_list_1" data-itemid="1" data-lid="4-5yaLmZh" data-index="1" target="_blank">
+          <div class="job-primary">
+              <div class="info-primary">
+                  <h3 class="name">
 
-        <hr>
+                    <%= @job.title %> RESUME LIST
 
-        <% if resume.attachment.present? %>
-          <i class="fa fa-paperclip"> </i>
-          <%= link_to("Download Resume", resume.attachment_url) %>
-        <% else %>
-           No Attachment
-        <% end %>
-    </div>
+                  </h3>
 
-</div>
+                    <p> <%= simple_format(resume.content) %> </p>
+
+                    <span class="red">
+                       <br>
+                    </span>
+
+                </p>
+                  <p style="font-size:25px"> </p>
+                  <br>
+                  <p style="font-size:1em;color:#555555"></p>
+
+              </div>
+              <div class="info-comapny">
+                  <div class="company-text">
+                      <div class="company-logo" style="padding-left: 200px;font-size: 25px;">
+
+                        <%= resume.user.email %>
+
+                      </div>
+                       <p style="margin-top: 110px; color:#555555 ">
+                         <% if resume.attachment.present? %>
+                           <i class="fa fa-paperclip"> </i>
+                           <%= link_to("Download Resume", resume.attachment_url) %>
+                         <% else %>
+                            No Attachment
+                         <% end %>
+                     </p>
+                  </div>
+              </div>
+          </div>
+          </a>
+      </li>
+
+ </div>

@@ -1,414 +1,99 @@
 <div class="pull-right">
-  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+
+
 </div>
 
-<div class="dropdown clearfix pull-right">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      排序
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li>
-          <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-        </li>
-        <li>
-            <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
 
-        </li>
-        <li>
-          <%= link_to("按照发表时间排序", jobs_path ) %>
-
-        </li>
+<div class="dropdown clearfix" >
+    <ul class="dropdown-money">
+       <button class="dropbtn">TYPE▼</button>
+        <div class="dropdown-content">
+            <li>
+            <%= link_to("Weapon maker") %>
+            </li>
+            <li>
+              <%= link_to("Warrior") %>
+            </li>
+            <li>
+              <%= link_to("Magicians") %>
+            </li>
+            <li>
+              <%= link_to("Monster") %>
+            </li>
+            <li>
+              <%= link_to("Spy") %>
+            </li>
+         </div>
     </ul>
 </div>
 
-<table class="table table-boldered">
-  <thead>
-       <tr>
-           <td>
-               职缺</td>
-           <td>薪资下限</td>
-           <td>薪资上限</td>
-           <td>刊登时间</td>
-       </tr>
 
-   </thead>
-   <tbody>
-       <% @jobs.each do |job| %>
-       <tr>
-           <td>
-               <%= link_to(job.title, job_path(job)) %>
-           </td>
-           <td>
-               <%= job.wage_lower_bound %>
-           </td>
-           <td>
-               <%= job.wage_upper_bound %>
-           </td>
-           <td>
-               <%= job.created_at %>
-           </td>
-       </tr>
-       <% end %>
-   </tbody>
-</table>
+<div class="dropdown clearfix" >
+    <ul class="dropdown-money" style="margin-left: 0px;">
+       <button class="dropbtn">SALARY▼</button>
+        <div class="dropdown-content">
+            <li>
+              <%= link_to("Sort by wage lower", jobs_path(:order => "by_lower_bound")) %>
+            </li>
+            <li>
+                <%= link_to("Sort by wage upper", jobs_path(:order => "by_upper_bound")) %>
+
+            </li>
+            <li>
+              <%= link_to("Sort by time", jobs_path ) %>
+            </li>
+         </div>
+    </ul>
+</div>
 
 
-<div class="row">
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/56">web</a></h3><span>2017-04-23</span>
-        </div>
-        <div class="info-mid">
-          10 k ~ 20 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-laptop"> 技术</span>
-        </span></div>
-      </div>
+         <button  class="dropbtn-red" >
 
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/56">新生大学</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/56/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>xdite@qq.com</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>北京</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/55">python数据挖掘工程师</a></h3><span>2017-04-23</span>
-        </div>
-        <div class="info-mid">
-          15 k ~ 35 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-laptop"> 技术</span>
-        </span></div>
-      </div>
+              <%= link_to("ADD A JOB", new_admin_job_path) %>
 
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/55">银河数据</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/55/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>domin@163.com</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>北京</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/54">设计师</a></h3><span>2017-04-23</span>
-        </div>
-        <div class="info-mid">
-          20000 k ~ 30000 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-photo"> 设计</span>
-        </span></div>
-      </div>
-
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/54">一下科技</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/54/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>sish@qq.com</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>北京</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/52">游戏代练</a></h3><span>2017-04-22</span>
-        </div>
-        <div class="info-mid">
-          1 k ~ 200 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-laptop"> 技术</span>
-        </span></div>
-      </div>
-
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/52">90Dog天外飞仙游戏工作室</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/52/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>user@domain.com</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>上海</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/50">前端</a></h3><span>2017-04-21</span>
-        </div>
-        <div class="info-mid">
-          8 k ~ 12 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-laptop"> 技术</span>
-        </span></div>
-      </div>
-
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/50">123</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/50/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>for@sina.com</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>北京</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/49">前端工程师</a></h3><span>2017-04-20</span>
-        </div>
-        <div class="info-mid">
-          2 k ~ 3 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-laptop"> 技术</span>
-        </span></div>
-      </div>
-
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/49">原是滋味</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/49/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>test@1.com</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>深圳</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/47">test</a></h3><span>2017-04-19</span>
-        </div>
-        <div class="info-mid">
-          12 k ~ 15 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-laptop"> 技术</span>
-        </span></div>
-      </div>
-
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/47">test</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/47/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>12@123.com</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>北京</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/46">aa</a></h3><span>2017-04-19</span>
-        </div>
-        <div class="info-mid">
-          5 k ~ 6 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-laptop"> 技术</span>
-        </span></div>
-      </div>
-
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/46">12345</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/46/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>123@aa.com</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>北京</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/44">Lead Ruby开发工程师 </a></h3><span>2017-04-19</span>
-        </div>
-        <div class="info-mid">
-          30 k ~ 50 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-laptop"> 技术</span>
-        </span></div>
-      </div>
-
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/44">FreeWheelUI</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/44/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>rruby@freewheel.tv</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>北京</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-xs-12 job-box">
-      <!--=== 职位信息 ===-->
-      <div class="col-md-6 col-xs-12 info">
-        <div class="info-top">
-          <h3><a target="_blank" href="/jobs/43">Ruby工程师</a></h3><span>2017-04-19</span>
-        </div>
-        <div class="info-mid">
-          25 k ~ 35 k
-        </div>
-        <div class="info-bot">
-          <span class="category"><span class="fa fa-laptop"> 技术</span>
-        </span></div>
-      </div>
-
-      <!--=== 公司信息 ===-->
-      <div class="col-md-6 col-xs-12 company">
-        <div class="company-top">
-          <span><a href="/jobs/43">GrowingIO</a></span>
-            <a rel="nofollow" data-method="post" href="/jobs/43/add">
-              <sapn class="fa fa-star-o"></sapn>
-</a>        </div>
-        <div class="company-mid">
-          <sapn class="fa fa-envelope"></sapn><span>hr@growingio.com</span>
-        </div>
-        <div class="company-bot">
-          <sapn class="fa fa-map-marker"></sapn><span>北京</span>
-        </div>
-      </div>
-    </div>
+        </button>
 
 
-    <!--=== 职位推荐：随机推荐五个职位 ===-->
-    <div class="col-md-3 side-box">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1 suggest-title">
-              <sapn class="fa fa-tags"></sapn> <span>职位推荐</span>
-            </div>
-            <div class="row">
-            <div class="col-xs-10 col-xs-offset-1 suggest-content">
-              <div>
-                <h3>
-                  <a target="_blank" href="/jobs/28">
-                    算法建模工程师 [香港]
-</a>                </h3>
-              </div>
-              <div><p>15 k ~ 30 k</p></div>
-              <div><span>百度外卖</span></div>
-            </div>
-            <div class="col-xs-10 col-xs-offset-1 suggest-content">
-              <div>
-                <h3>
-                  <a target="_blank" href="/jobs/3">
-                    Producer [海外]
-</a>                </h3>
-              </div>
-              <div><p>35 k ~ 50 k</p></div>
-              <div><span>Facebook</span></div>
-            </div>
-            <div class="col-xs-10 col-xs-offset-1 suggest-content">
-              <div>
-                <h3>
-                  <a target="_blank" href="/jobs/41">
-                    Java架构师 [深圳]
-</a>                </h3>
-              </div>
-              <div><p>20 k ~ 30 k</p></div>
-              <div><span>随行付支付</span></div>
-            </div>
-            <div class="col-xs-10 col-xs-offset-1 suggest-content">
-              <div>
-                <h3>
-                  <a target="_blank" href="/jobs/20">
-                    UI设计师 [广州]
-</a>                </h3>
-              </div>
-              <div><p>10 k ~ 20 k</p></div>
-              <div><span>律宝</span></div>
-            </div>
-            <div class="col-xs-10 col-xs-offset-1 suggest-content">
-              <div>
-                <h3>
-                  <a target="_blank" href="/jobs/46">
-                    aa [北京]
-</a>                </h3>
-              </div>
-              <div><p>5 k ~ 6 k</p></div>
-              <div><span>12345</span></div>
-            </div>
-            </div>
+  <% @jobs.each do |job| %>
+
+         <div class="job-list">
+       <ul>
+
+               <li>
+                   <a href="/job_detail/1411172989.html?ka=job_list_1" ka="job_list_1" data-itemid="1" data-lid="4-5yaLmZh" data-index="1" target="_blank">
+                   <div class="job-primary">
+                       <div class="info-primary">
+                           <h3 class="name">
+
+                                  <%= link_to(job.title,   new_job_resume_path(job)) %>
+                           </h3>
+
+                           <p class="saraly">
+
+                             <span class="red">
+
+                               <br>
+                             </span>
+
+                         </p>
+                           <p style="font-size:25px"><%= job.description %></p>
+                           <br>
+                           <p style="font-size:1em;color:#555555"> <%= job.created_at %></p>
+
+                       </div>
+                       <div class="info-comapny">
+                           <div class="company-text">
+                               <div class="company-logo" style="padding-left: 200px;">
+
+                                   <%= job.wage_lower_bound %>$ - <%= job.wage_upper_bound %>$
+                               </div>
+                                <p style="margin-top: 110px; color:#555555 "><%= job.contact_email %></p>
+                           </div>
+                       </div>
+                   </div>
+                   </a>
+               </li>
+
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+   <% end %>

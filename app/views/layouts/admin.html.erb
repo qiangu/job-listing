@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Job Listing </title>
+        <title>GALAXY JOB LIST </title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,20 +10,15 @@
 
     <body>
 
-        <div class="container-fluid">
+        <div class="container-fluid" style="padding-left: 0px;padding-right: 0px;">
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
-            <div class="row">
-              <div class="col-md-2">
-                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
-    <li class="active"><%= link_to("Jobs", admin_jobs_path ) %> </li>
 
- </ul>
-              </div>
 
-              <div class="col-md-10">
+            <div class="row" style="padding-bottom: 300px;">
+
+
                 <%= yield %>
-              </div>
            </div>
         </div>
 
